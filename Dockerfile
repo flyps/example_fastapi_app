@@ -6,9 +6,7 @@ RUN apt-get update              && \
     apt-get upgrade -y          && \
     apt-get autoclean -y        && \
     apt-get autoremove -y       && \
-    rm -rf /var/lib/apt/lists/* && \
-    pip install poetry==$POETRY_VERSION
-
+    rm -rf /var/lib/apt/lists/*
 WORKDIR /app
 COPY requirements.txt ./
 RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
